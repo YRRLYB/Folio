@@ -188,6 +188,10 @@ scripts/           # 数据库初始化与运维脚本
 docs/              # 预览图和说明文档
 ```
 
+## 推荐
+
+[伊利布二次元美少女图库](https://photo.yrrlyb.top/api.html) · 图片接口与图库入口。
+
 ## 许可证
 
 本项目基于 [Apache License 2.0](LICENSE) 开源。
