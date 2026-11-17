@@ -1,0 +1,19 @@
+.comments { max-width:780px; padding: 45px 0 70px; border-top:1px solid var(--site-line); }
+.comments h2 { margin:0; font-size:clamp(26px, 3vw, 36px); font-weight:630; letter-spacing:-.035em; }
+.hint { color:var(--site-muted); font-size:13px; line-height:1.7; }
+.form { display:grid; gap:18px; margin:24px 0; }
+.form label { display:grid; gap:7px; color:var(--site-muted); font-size:13px; }
+.form input,.form textarea { width:100%; padding:11px 12px; border:1px solid var(--site-line); border-radius:var(--site-radius); background:var(--site-bg); color:var(--site-ink); font:inherit; font-size:15px; }
+.form input { max-width:300px; }
+.form textarea { resize:vertical; min-height:120px; line-height:1.7; }
+.form button,.more { justify-self:start; min-height:42px; padding:0 18px; border:1px solid var(--site-ink); border-radius:var(--site-radius); color:var(--site-bg); background:var(--site-ink); font-size:13px; }
+.form button:disabled,.more:disabled { opacity:.5; cursor:default; }
+.form .honeypot { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.message,.error { font-size:13px; line-height:1.7; }
+.message { color:var(--site-ink); }.error { color:#b34335; }
+.list { margin-top:32px; }
+.comment { padding:21px 0; border-top:1px solid var(--site-line); overflow-wrap:anywhere; }
+.comment div { display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; }
+.comment strong { font-size:14px; }.comment time { font-size:12px; color:var(--site-muted); }
+.comment p { margin:9px 0 0; white-space:pre-wrap; font-size:14px; line-height:1.8; }
+.more { margin-top:15px; color:var(--site-ink); border-color:var(--site-line); background:transparent; }

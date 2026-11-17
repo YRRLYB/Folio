@@ -1,0 +1,25 @@
+// Types describe the destination; URLs remain explicit so unusual profiles can
+// still be entered without guessing a platform's URL format.
+export const socialTypes = [
+  { value: "link", label: "网站 / 在线服务" },
+  { value: "other", label: "其他社交账号" },
+  { value: "email", label: "电子邮箱" },
+  { value: "qq", label: "QQ" },
+  { value: "wechat", label: "微信" },
+  { value: "weibo", label: "微博" },
+  { value: "bilibili", label: "哔哩哔哩" },
+  { value: "douyin", label: "抖音" },
+  { value: "xiaohongshu", label: "小红书" },
+  { value: "zhihu", label: "知乎" },
+  { value: "github", label: "GitHub" },
+  { value: "gitlab", label: "GitLab" },
+  { value: "gitee", label: "Gitee" },
+  { value: "telegram", label: "Telegram" },
+  { value: "discord", label: "Discord" },
+  { value: "youtube", label: "YouTube" },
+  { value: "x", label: "X / Twitter" },
+  { value: "instagram", label: "Instagram" },
+  { value: "mastodon", label: "Mastodon" },
+  { value: "steam", label: "Steam" },
+  { value: "osu", label: "osu!" },
+] as const;

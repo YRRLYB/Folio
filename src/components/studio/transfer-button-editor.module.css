@@ -1,0 +1,102 @@
+.block {
+  margin: 24px 0;
+  padding: 18px;
+  border: 1px solid #dce7df;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f7faf6, #fff);
+  transition: border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.selected {
+  border-color: #8eaa96;
+  box-shadow: 0 0 0 3px rgb(110 146 115 / 8%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4c6955;
+  font: 600 12px/1.5 var(--font-sans, sans-serif);
+}
+
+.dragHandle {
+  display: flex;
+  cursor: grab;
+  color: #8ea493;
+}
+
+.remove {
+  display: flex;
+  margin-left: auto;
+  padding: 5px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #8d9a90;
+}
+
+.remove:hover { background: #f5eae7; color: #a15949; }
+
+.fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 140px;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+  color: #748179;
+  font: 11px/1.5 var(--font-sans, sans-serif);
+}
+
+.address { grid-column: 1 / -1; }
+
+.field input, .field select {
+  min-width: 0;
+  width: 100%;
+  min-height: 35px;
+  padding: 7px 10px;
+  border: 1px solid #dce5de;
+  border-radius: 6px;
+  outline: none;
+  background: #fff;
+  color: #354b3c;
+  font: 12px/1.5 var(--font-sans, sans-serif);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.field input:focus, .field select:focus {
+  border-color: #8da990;
+  box-shadow: 0 0 0 3px rgb(110 146 115 / 8%);
+}
+
+.field input[aria-invalid="true"] { border-color: #c59179; }
+.hint { margin: 0; color: #93a195; font: 11px/1.6 var(--font-sans, sans-serif); }
+.error { color: #a9644c; }
+
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #e4ece4;
+}
+
+.preview > span { color: #92a095; font: 10px/1.5 var(--font-sans, sans-serif); }
+.block .preview a { color: var(--button-ink, #1d2724); text-decoration: none; }
+
+@media (max-width: 580px) {
+  .block { padding: 14px; }
+  .fields { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .block, .field input, .field select { transition: none; }
+}

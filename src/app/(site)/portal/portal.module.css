@@ -1,0 +1,31 @@
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(40px, 7vw, 100px);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px;
+  color: var(--site-muted);
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.heading::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--site-accent);
+}
+
+.links {
+  border-top: 1px solid var(--site-line);
+}
+
+@media (max-width: 700px) {
+  .columns { grid-template-columns: 1fr; gap: 40px; }
+}

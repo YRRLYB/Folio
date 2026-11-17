@@ -1,0 +1,3 @@
+export default function SiteLoading() {
+  return <div className="site-container site-loading-page" aria-label="内容加载中"><div className="site-skeleton" style={{ width: 90, marginBottom: 36 }} /><div className="site-skeleton" style={{ width: "min(65%, 540px)", height: 56, marginBottom: 21 }} /><div className="site-skeleton" style={{ width: "min(48%, 400px)", marginBottom: 78 }} /><div className="site-skeleton" style={{ width: "100%", height: 1, marginBottom: 35 }} /><div className="site-skeleton" style={{ width: "min(82%, 650px)", marginBottom: 14 }} /><div className="site-skeleton" style={{ width: "min(68%, 540px)" }} /></div>;
+}

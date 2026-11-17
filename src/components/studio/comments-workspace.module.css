@@ -1,0 +1,8 @@
+.list { margin:22px 0; border-top:1px solid var(--studio-line); }
+.row { padding:22px 0; border-bottom:1px solid var(--studio-line); overflow-wrap:anywhere; }
+.meta { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+.meta strong { font-size:14px; }.meta time { color:var(--studio-muted); font-size:12px; }
+.meta span { border-radius:4px; padding:4px 8px; font-size:11px; }
+.body { margin:13px 0; white-space:pre-wrap; font-size:14px; line-height:1.75; }
+.actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; color:var(--studio-muted); font-size:12px; }
+.actions span { flex:1 1 200px; }.actions a { display:inline-flex; align-items:center; gap:5px; }

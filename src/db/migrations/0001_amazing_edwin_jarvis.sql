@@ -1,0 +1,1 @@
+ALTER TABLE "background_sources" ALTER COLUMN "refresh" SET DEFAULT 'page';

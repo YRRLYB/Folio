@@ -1,0 +1,35 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--site-ink, var(--entrance-ink, #1d2724));
+  background: var(--site-bg, var(--canvas, #f6f7f5));
+  background-image: radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--site-accent, #76594c) 6%, transparent), transparent 65%);
+}
+
+.overlay[hidden] { display: none; }
+.overlay[data-site-entrance="loading"] { animation: timeout 12s step-end forwards; }
+.overlay[data-site-entrance="leaving"] { pointer-events: none; animation: lift 660ms cubic-bezier(.22, 1, .36, 1) both; }
+.center { display: flex; flex-direction: column; align-items: center; padding: 32px; transform: translateY(-12px); }
+.spark { color: var(--site-accent, #76594c); margin-bottom: 24px; animation: breathe 1800ms ease-in-out infinite; }
+.name { margin: 0; font-size: clamp(36px, 6vw, 64px); line-height: 1.1; font-weight: 720; letter-spacing: -.065em; }
+.track { width: 120px; height: 1px; position: relative; overflow: hidden; margin-top: 32px; background: var(--site-line, #d9dfdb); }
+.track > span { position: absolute; inset: 0; background: var(--site-accent, #76594c); transform-origin: left; animation: pass 1600ms cubic-bezier(.45, 0, .55, 1) infinite; }
+.caption { margin: 16px 0 0; color: var(--site-muted, var(--entrance-muted, #66736d)); font-size: 11px; letter-spacing: .15em; }
+.skip { position: absolute; right: max(28px, env(safe-area-inset-right)); bottom: max(28px, env(safe-area-inset-bottom)); display: flex; align-items: center; gap: 16px; padding: 10px 0; color: var(--site-muted); border: 0; border-bottom: 1px solid var(--site-line); background: transparent; font-size: 12px !important; }
+.skip:hover { color: var(--site-ink); border-color: var(--site-accent); }
+.skip span { color: var(--site-accent); }
+
+@keyframes pass { 0% { transform: translateX(-105%) scaleX(.65); } 55%, 100% { transform: translateX(105%) scaleX(.65); } }
+@keyframes breathe { 0%, 100% { opacity: .5; transform: scale(.92); } 50% { opacity: 1; transform: scale(1); } }
+@keyframes lift { 0% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); visibility: hidden; } }
+@keyframes timeout { to { visibility: hidden; pointer-events: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .spark, .track > span { animation: none; }
+  .track > span { transform: scaleX(.4); }
+  .overlay[data-site-entrance="loading"] { animation-duration: 12s !important; }
+}

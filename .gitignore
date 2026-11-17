@@ -1,0 +1,19 @@
+node_modules/
+.next/
+.env*
+!.env.example
+public/uploads/
+backup/
+scripts/vendor/*.dmg
+blog-transfer-*.zip
+*.tsbuildinfo
+next-env.d.ts
+coverage/
+.DS_Store
+*.dump
+*.sql.gz
+*.zip
+旧.html
+需求.txt
+file_00000000e9a8820ba18fa935d195f101.png
+, safeSiteUrl(value));

@@ -1,0 +1,102 @@
+.surface {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  overflow: hidden;
+  overflow: clip;
+}
+
+:global(.site-home-panel) > .surface {
+  min-height: calc(var(--site-viewport-height, 100vh) - var(--site-header-height));
+}
+
+.panelBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.panelBody > :global(.site-hero) {
+  /* Keep natural content height on short/zoomed screens; the panel can scroll. */
+  flex: 1 0 auto;
+  min-height: 0;
+}
+
+.panelBody > :global(.site-section) {
+  min-height: 0;
+  border-top: 0;
+  padding-block: clamp(36px, 5vh, 58px);
+}
+
+:global(.site-home-panel:not([data-home-section="hero"])) > .surface {
+  border-top: 1px solid var(--site-line);
+}
+
+:global(.site-home-panel[data-home-section="hero"]) > .surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(ellipse at 72% 45%, color-mix(in srgb, var(--site-accent) 7%, transparent), transparent 65%);
+}
+
+.surface > :not(.backdrop, .heroImage) {
+  position: relative;
+  z-index: 1;
+}
+
+.backdrop,
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.backdrop { opacity: .1; }
+.heroImage { opacity: .18; }
+
+.wideImage {
+  display: block;
+  width: 100%;
+  max-height: 260px;
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 0 0 30px;
+}
+
+.compactImage {
+  display: block;
+  width: 96px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 0 0 12px;
+}
+
+.footerImage {
+  display: block;
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 951px) {
+  .wideImage { max-height: clamp(80px, 14vh, 180px); margin-bottom: 20px; }
+}
+
+@media (max-width: 700px) {
+  .panelBody > :global(.site-section) { padding-block: 46px 34px; }
+  .wideImage { aspect-ratio: 1.8 / 1; max-height: 220px; margin-bottom: 24px; }
+  .compactImage { width: 72px; height: 56px; }
+}
